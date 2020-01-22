@@ -46,8 +46,12 @@ public class LevelNine extends AppCompatActivity implements View.OnTouchListener
         frame = findViewById(R.id.frameLayout);
         obs1 = findViewById(R.id.obs1);
         obs2 = findViewById(R.id.obs2);
+        obs3 = findViewById(R.id.obs3);
+        obs4 = findViewById(R.id.obs4);
+        obs5 = findViewById(R.id.obs5);
         goal = findViewById(R.id.goal);
         plat1 = findViewById(R.id.plat1);
+        plat2 = findViewById(R.id.plat2);
 
 
 

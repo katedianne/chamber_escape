@@ -7,4 +7,116 @@
     android:background="@drawable/fourteennew"
     tools:context=".LevelFourteen">
 
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="269dp"
+        android:layout_height="417dp"
+        android:layout_marginStart="231dp"
+        android:layout_marginLeft="231dp"
+        android:layout_marginEnd="231dp"
+        android:layout_marginRight="231dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/plat1"
+            android:layout_width="95dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="85dp"
+            android:src="@color/colorAccent" />
+
+        <ImageView
+            android:id="@+id/plat2"
+            android:layout_width="74dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="260dp"
+            android:src="@color/colorAccent" />
+
+        <ImageView
+            android:id="@+id/goal"
+            android:layout_width="26dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="231dp"
+            android:layout_marginLeft="69dp"
+            android:src="@color/colorAccent" />
+
+        <ImageView
+            android:id="@+id/wiz"
+            android:layout_width="42dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/idle" />
+
+        <ImageView
+            android:id="@+id/obs1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="185dp"
+            android:layout_marginLeft="33dp"
+            app:srcCompat="@drawable/obs3" />
+
+        <ImageView
+            android:id="@+id/obs2"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="290dp"
+            app:srcCompat="@drawable/obs3" />
+
+        <ImageView
+            android:id="@+id/obs3"
+            android:layout_width="wrap_content"
+            android:layout_height="105dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="20dp"
+            app:srcCompat="@drawable/obs2" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/left"
+        android:layout_width="99dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="264dp"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left" />
+
+    <ImageView
+        android:id="@+id/right"
+        android:layout_width="105dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="245dp"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
+        app:layout_constraintStart_toEndOf="@+id/left"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/right" />
+
+    <ImageView
+        android:id="@+id/up"
+        android:layout_width="95dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="228dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/up" />
+
+    <ImageView
+        android:id="@+id/down"
+        android:layout_width="93dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="234dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/up"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/down" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

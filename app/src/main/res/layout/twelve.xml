@@ -7,4 +7,93 @@
     android:background="@drawable/twelvenew"
     tools:context=".LevelTwelve">
 
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="384dp"
+        android:layout_height="413dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginLeft="184dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginRight="163dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/obs1"
+            android:layout_width="133dp"
+            android:layout_height="54dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="210dp"
+            app:srcCompat="@drawable/obs3" />
+
+        <ImageView
+            android:id="@+id/plat1"
+            android:layout_width="139dp"
+            android:layout_height="21dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="110dp"
+            android:src="@color/colorAccent" />
+
+        <ImageView
+            android:id="@+id/goal"
+            android:layout_width="34dp"
+            android:layout_height="68dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="225dp"
+            android:src="@color/colorAccent" />
+
+        <ImageView
+            android:id="@+id/wiz"
+            android:layout_width="85dp"
+            android:layout_height="95dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@drawable/idle" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/left"
+        android:layout_width="60dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="280dp"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left" />
+
+    <ImageView
+        android:id="@+id/right"
+        android:layout_width="75dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="280dp"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toEndOf="@+id/left"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/right" />
+
+    <ImageView
+        android:id="@+id/up"
+        android:layout_width="65dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="276dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/up" />
+
+    <ImageView
+        android:id="@+id/down"
+        android:layout_width="68dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="276dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/up"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/down" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
