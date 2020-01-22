@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/threenew"
+    tools:context=".LevelThree">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="366dp"
+        android:layout_height="411dp"
+        android:layout_marginStart="193dp"
+        android:layout_marginLeft="193dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginRight="172dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/obs1"
+            android:layout_width="91dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="103dp"
+            app:srcCompat="@drawable/obs3" />
+
+        <ImageView
+            android:id="@+id/obs2"
+            android:layout_width="84dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="103dp"
+            android:layout_marginLeft="91dp"
+            app:srcCompat="@drawable/obs3" />
+
+        <ImageView
+            android:id="@+id/obs4"
+            android:layout_width="91dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="103dp"
+            android:layout_marginLeft="182dp"
+            app:srcCompat="@drawable/obs3" />
+
+        <ImageView
+            android:id="@+id/obs3"
+            android:layout_width="91dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="260dp"
+            android:layout_marginLeft="185dp"
+            app:srcCompat="@drawable/obs3" />
+
+        <ImageView
+            android:id="@+id/obs5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="315dp"
+            android:layout_marginTop="184dp"
+            app:srcCompat="@drawable/obs1" />
+
+        <ImageView
+            android:id="@+id/plat1"
+            android:layout_width="183dp"
+            android:layout_height="141dp"
+            android:layout_marginTop="270dp"
+            android:layout_marginLeft="0dp"
+            android:src="@color/ic_launcher_background"
+            app:layout_constraintTop_toBottomOf="@+id/goal" />
+
+        <ImageView
+            android:id="@+id/goal"
+            android:layout_width="34dp"
+            android:layout_height="73dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="85dp"
+            app:srcCompat="@android:color/background_dark" />
+
+        <ImageView
+            android:id="@+id/wiz"
+            android:layout_width="39dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="0dp"
+            app:srcCompat="@drawable/idle" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/left"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="331dp"
+        app:layout_constraintEnd_toStartOf="@+id/right"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left" />
+
+    <ImageView
+        android:id="@+id/right"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="328dp"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
+        app:layout_constraintStart_toEndOf="@+id/left"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/right" />
+
+    <ImageView
+        android:id="@+id/up"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="344dp"
+        app:layout_constraintEnd_toStartOf="@+id/down"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/up" />
+
+    <ImageView
+        android:id="@+id/down"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="344dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/up"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/down" />
+</androidx.constraintlayout.widget.ConstraintLayout>

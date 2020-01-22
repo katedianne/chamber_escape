@@ -2,17 +2,17 @@
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
     android:drawable="@drawable/idle_1"
-    android:duration="100"/>
+    android:duration="250"/>
 
     <item
         android:drawable="@drawable/idle_2"
-        android:duration="100"/>
+        android:duration="250"/>
 
     <item
         android:drawable="@drawable/idle_3"
-        android:duration="100"/>
+        android:duration="250"/>
 
     <item
         android:drawable="@drawable/idle_4"
-        android:duration="100"/>
+        android:duration="250"/>
 </animation-list>
