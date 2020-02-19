@@ -8,26 +8,99 @@
     tools:context=".Selection916">
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/level12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/b9"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="92dp" />
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/level11"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/b12" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/level13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/b9"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="92dp" />
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toStartOf="@+id/level14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/level10"
+        app:srcCompat="@drawable/b13" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/level14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/b9"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="92dp" />
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toStartOf="@+id/level15"
+        app:layout_constraintStart_toEndOf="@+id/level13"
+        app:layout_constraintTop_toBottomOf="@+id/level11"
+        app:srcCompat="@drawable/b14" />
+
+    <ImageView
+        android:id="@+id/level15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toStartOf="@+id/level16"
+        app:layout_constraintStart_toEndOf="@+id/level14"
+        app:layout_constraintTop_toBottomOf="@+id/level11"
+        app:srcCompat="@drawable/b15" />
+
+    <ImageView
+        android:id="@+id/level16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/level15"
+        app:layout_constraintTop_toBottomOf="@+id/level12"
+        app:srcCompat="@drawable/b16" />
+
+    <ImageView
+        android:id="@+id/level11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        app:layout_constraintEnd_toStartOf="@+id/level12"
+        app:layout_constraintStart_toEndOf="@+id/level10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/b11" />
+
+    <ImageView
+        android:id="@+id/level10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        app:layout_constraintEnd_toStartOf="@+id/level11"
+        app:layout_constraintStart_toEndOf="@+id/level9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/b10" />
+
+    <ImageView
+        android:id="@+id/level9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintEnd_toStartOf="@+id/level10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/b9" />
+
+    <ImageView
+        android:id="@+id/prev"
+        android:layout_width="98dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/arrowprev" />
 </androidx.constraintlayout.widget.ConstraintLayout>

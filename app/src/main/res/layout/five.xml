@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="78dp"
             android:layout_marginTop="340dp"
+            android:visibility="invisible"
             android:src="@color/ic_launcher_background"
            />
 
@@ -55,6 +56,7 @@
             android:layout_height="110dp"
             android:layout_marginLeft="285dp"
             android:layout_marginTop="235dp"
+            android:visibility="invisible"
             app:srcCompat="@android:color/background_dark" />
 
     </FrameLayout>

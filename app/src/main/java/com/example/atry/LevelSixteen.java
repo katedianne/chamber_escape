@@ -2,6 +2,7 @@ package com.example.atry;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -18,7 +19,9 @@ import java.util.TimerTask;
 
 public class LevelSixteen extends AppCompatActivity  implements View.OnTouchListener {
 
-    private ImageView wiz, plat1, plat2, obs1, goal;
+    Application application = com.example.atry.Application.getOurIntance();
+    private long currentTime = 0, timeInvincible = 0;
+    private ImageView wiz, plat2, obs1, obs2, obs3, goal;
     private FrameLayout frame;
     private Drawable wizardRight, wizardLeft, wizardRightRun, wizardLeftRun;
     private float wizardX, wizardY, jumpLimit;
@@ -46,7 +49,8 @@ public class LevelSixteen extends AppCompatActivity  implements View.OnTouchList
         frame = findViewById(R.id.frameLayout);
         obs1 = findViewById(R.id.obs1);
         goal = findViewById(R.id.goal);
-        plat1 = findViewById(R.id.plat1);
+        obs2 = findViewById(R.id.obs2);
+        obs3 = findViewById(R.id.obs3);
         plat2 = findViewById(R.id.plat2);
 
 
@@ -64,6 +68,12 @@ public class LevelSixteen extends AppCompatActivity  implements View.OnTouchList
                     @Override
                     public void run() {
                         if (!gameOver) changePosition();
+                        if (application.isRevived() && timeInvincible == 0){
+                            wiz.setX(application.getxCoor());
+                            wiz.setY(application.getyCoor());
+                            timeInvincible = 1500;
+                        }
+                        currentTime += 20;
                     }
                 });
             }
@@ -95,12 +105,24 @@ public class LevelSixteen extends AppCompatActivity  implements View.OnTouchList
         }
 
         if(action_down || action_up || action_left || action_right){
-            if (Collision.checkColl(obs1, wiz)) {
-                Toast.makeText(getApplicationContext(), "DEAD", Toast.LENGTH_SHORT).show();
-                gameOver = true;
+            if(currentTime > timeInvincible) {
+                if (Collision.checkColl(obs1, wiz) || Collision.checkColl(obs2, wiz)|| Collision.checkColl(obs3, wiz)) {
+//                Toast.makeText(getApplicationContext(), "DEAD", Toast.LENGTH_SHORT).show();
+                    application.setxCoor(wizardX);
+                    application.setyCoor(wizardY);
+                    if (!application.isRevived()) {
+                        Intent intent = new Intent(LevelSixteen.this, MiniGame.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(LevelSixteen.this, GameOver.class);
+                        startActivity(intent);
+                    }
+                    gameOver = true;
+                }
             }
             if (Collision.checkColl(goal, wiz)) {
-                Toast.makeText(getApplicationContext(), "FINISHED", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LevelSixteen.this, Escaped.class);
+                startActivity(intent);
                 gameOver = true;
             }
         }
@@ -108,8 +130,7 @@ public class LevelSixteen extends AppCompatActivity  implements View.OnTouchList
         if (wizardX < 0) wizardX = 0;
         if (wizardX > frame.getWidth() - wiz.getWidth()) wizardX = frame.getWidth() - wiz.getWidth();
         if (wizardY < 0) wizardY = 0;
-        if (wizardY > plat1.getY() - wiz.getHeight() ) wizardY = plat1.getY() - wiz.getHeight();
-        if (wizardY > plat2.getY() - wiz.getHeight() && wizardX + wiz.getWidth() > plat2.getX()) wizardY = plat2.getY() - wiz.getHeight();
+        if (wizardY > plat2.getY() - wiz.getHeight() && wizardX < plat2.getX() + plat2.getWidth()) wizardY = plat2.getY() - wiz.getHeight();
 
 
 

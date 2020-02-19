@@ -25,14 +25,16 @@
             android:layout_height="259dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="180dp"
+            android:visibility="invisible"
             android:src="@color/colorAccent" />
 
         <ImageView
-            android:id="@+id/imageView11"
+            android:id="@+id/plat2"
             android:layout_width="16dp"
             android:layout_height="240dp"
             android:layout_marginTop="180dp"
             android:layout_marginLeft="162dp"
+            android:visibility="invisible"
             android:src="@color/colorAccent" />
 
         <ImageView
@@ -41,6 +43,7 @@
             android:layout_height="65dp"
             android:layout_marginLeft="330dp"
             android:layout_marginTop="30dp"
+            android:visibility="invisible"
             android:src="@color/colorAccent" />
 
         <ImageView

@@ -35,17 +35,17 @@
 
         <ImageView
             android:id="@+id/obs2"
-            android:layout_width="91dp"
-            android:layout_height="120dp"
+            android:layout_width="55dp"
+            android:layout_height="119dp"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="120dp"
             app:srcCompat="@drawable/obs2" />
 
         <ImageView
             android:id="@+id/obs3"
-            android:layout_width="105dp"
-            android:layout_height="54dp"
-            android:layout_marginLeft="200dp"
+            android:layout_width="64dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="220dp"
             android:layout_marginTop="220dp"
             app:srcCompat="@drawable/obs1" />
 
@@ -54,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="370dp"
+            android:visibility="invisible"
             android:src="@color/colorAccent" />
 
         <ImageView
@@ -62,6 +63,7 @@
             android:layout_height="70dp"
             android:layout_marginLeft="330dp"
             android:layout_marginTop="110dp"
+            android:visibility="invisible"
             android:src="@color/colorAccent" />
 
     </FrameLayout>

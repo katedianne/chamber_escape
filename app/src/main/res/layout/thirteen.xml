@@ -25,6 +25,7 @@
             android:layout_height="74dp"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="95dp"
+            android:visibility="invisible"
             android:src="@color/colorAccent" />
 
         <ImageView
@@ -33,6 +34,7 @@
             android:layout_height="16dp"
             android:layout_marginLeft="320dp"
             android:layout_marginTop="160dp"
+            android:visibility="invisible"
             android:src="@color/colorAccent" />
 
         <ImageView
@@ -45,9 +47,9 @@
 
         <ImageView
             android:id="@+id/obs2"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="120dp"
             android:layout_marginTop="210dp"
             app:srcCompat="@drawable/obs1" />
 
@@ -69,8 +71,8 @@
 
         <ImageView
             android:id="@+id/wiz"
-            android:layout_width="79dp"
-            android:layout_height="72dp"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
             android:layout_marginLeft="297dp"
             android:layout_marginTop="83dp"
             app:srcCompat="@drawable/idle" />

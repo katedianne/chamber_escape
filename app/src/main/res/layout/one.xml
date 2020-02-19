@@ -27,6 +27,7 @@
             android:layout_width="250dp"
             android:layout_height="70dp"
             android:layout_gravity="bottom"
+            android:visibility="invisible"
             app:srcCompat="@color/colorPrimaryDark" />
 
         <ImageView
@@ -43,6 +44,7 @@
             android:layout_height="105dp"
             android:layout_marginTop="115dp"
             android:layout_marginLeft="285dp"
+            android:visibility="invisible"
             app:srcCompat="@android:color/background_dark" />
 
     </FrameLayout>

@@ -2,6 +2,7 @@ package com.example.atry;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -18,6 +19,8 @@ import java.util.TimerTask;
 
 public class LevelSeven extends AppCompatActivity implements View.OnTouchListener {
 
+    Application application = com.example.atry.Application.getOurIntance();
+    private long currentTime = 0, timeInvincible = 0;
     private ImageView wiz, plat1, plat2, obs1, obs2, obs3, goal;
     private FrameLayout frame;
     private Drawable wizardRight, wizardLeft, wizardRightRun, wizardLeftRun;
@@ -66,6 +69,12 @@ public class LevelSeven extends AppCompatActivity implements View.OnTouchListene
                     @Override
                     public void run() {
                         if (!gameOver) changePosition();
+                        if (application.isRevived() && timeInvincible == 0){
+                            wiz.setX(application.getxCoor());
+                            wiz.setY(application.getyCoor());
+                            timeInvincible = 1500;
+                        }
+                        currentTime += 20;
                     }
                 });
             }
@@ -97,12 +106,24 @@ public class LevelSeven extends AppCompatActivity implements View.OnTouchListene
         }
 
         if(action_down || action_up || action_left || action_right){
-            if (Collision.checkColl(obs1, wiz) || Collision.checkColl(obs2, wiz)) {
-                Toast.makeText(getApplicationContext(), "DEAD", Toast.LENGTH_SHORT).show();
-                gameOver = true;
+            if(currentTime > timeInvincible) {
+                if (Collision.checkColl(obs1, wiz) || Collision.checkColl(obs2, wiz) || Collision.checkColl(obs3, wiz)) {
+//                Toast.makeText(getApplicationContext(), "DEAD", Toast.LENGTH_SHORT).show();
+                    application.setxCoor(wizardX);
+                    application.setyCoor(wizardY);
+                    if (!application.isRevived()) {
+                        Intent intent = new Intent(LevelSeven.this, MiniGame.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(LevelSeven.this, GameOver.class);
+                        startActivity(intent);
+                    }
+                    gameOver = true;
+                }
             }
             if (Collision.checkColl(goal, wiz)) {
-                Toast.makeText(getApplicationContext(), "FINISHED", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LevelSeven.this, Escaped.class);
+                startActivity(intent);
                 gameOver = true;
             }
         }

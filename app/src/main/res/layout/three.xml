@@ -64,6 +64,7 @@
             android:layout_height="141dp"
             android:layout_marginTop="270dp"
             android:layout_marginLeft="0dp"
+            android:visibility="invisible"
             android:src="@color/ic_launcher_background"
             app:layout_constraintTop_toBottomOf="@+id/goal" />
 
@@ -73,6 +74,7 @@
             android:layout_height="73dp"
             android:layout_marginTop="200dp"
             android:layout_marginLeft="85dp"
+            android:visibility="invisible"
             app:srcCompat="@android:color/background_dark" />
 
         <ImageView

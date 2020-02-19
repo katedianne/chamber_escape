@@ -45,6 +45,7 @@
             android:layout_width="388dp"
             android:layout_height="75dp"
             android:layout_marginTop="340dp"
+            android:visibility="invisible"
             android:src="@color/ic_launcher_background" />
 
         <ImageView
@@ -53,6 +54,7 @@
             android:layout_height="274dp"
             android:layout_marginLeft="389dp"
             android:layout_marginTop="140dp"
+            android:visibility="invisible"
             android:src="@color/ic_launcher_background" />
 
         <ImageView
@@ -61,6 +63,7 @@
             android:layout_height="81dp"
             android:layout_marginLeft="416dp"
             android:layout_marginTop="60dp"
+            android:visibility="invisible"
             android:src="#000000" />
 
         <ImageView

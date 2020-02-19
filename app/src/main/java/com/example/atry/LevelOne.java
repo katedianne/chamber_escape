@@ -1,6 +1,6 @@
 package com.example.atry;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.app.Activity;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
@@ -8,17 +8,22 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.content.Intent;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class LevelOne extends AppCompatActivity implements View.OnTouchListener {
 
+    Application application = com.example.atry.Application.getOurIntance();
+    private long currentTime = 0, timeInvincible = 0;
     private ImageView wizard, wiz, grnd, obs, goal;
     private FrameLayout frame;
     private Drawable wizardRight, wizardLeft, wizardRightRun, wizardLeftRun;
@@ -65,6 +70,12 @@ public class LevelOne extends AppCompatActivity implements View.OnTouchListener 
                     @Override
                     public void run() {
                         if (!gameOver) changePosition();
+                        if (application.isRevived() && timeInvincible == 0){
+                            wiz.setX(application.getxCoor());
+                            wiz.setY(application.getyCoor());
+                            timeInvincible = 1500;
+                        }
+                        currentTime += 20;
                     }
                 });
             }
@@ -96,12 +107,25 @@ public class LevelOne extends AppCompatActivity implements View.OnTouchListener 
         }
 
         if(action_down || action_up || action_left || action_right){
-            if (Collision.checkColl(obs, wiz) ) {
-                Toast.makeText(getApplicationContext(), "DEAD", Toast.LENGTH_SHORT).show();
-                gameOver = true;
+            if(currentTime > timeInvincible){
+                if (Collision.checkColl(obs, wiz) ) {
+//                Toast.makeText(getApplicationContext(), "DEAD", Toast.LENGTH_SHORT).show();
+                    application.setxCoor(wizardX);
+                    application.setyCoor(wizardY);
+                    if(!application.isRevived()){
+                        Intent intent = new Intent(LevelOne.this, MiniGame.class);
+                        startActivity(intent);
+                    }else {
+                        Intent intent = new Intent(LevelOne.this, GameOver.class);
+                        startActivity(intent);
+                    }
+                    gameOver = true;
+                }
             }
             if (Collision.checkColl(goal, wiz)) {
-                Toast.makeText(getApplicationContext(), "FINISHED", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "FINISHED", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LevelOne.this, Escaped.class);
+                startActivity(intent);
                 gameOver = true;
             }
         }
@@ -111,98 +135,6 @@ public class LevelOne extends AppCompatActivity implements View.OnTouchListener 
         if (wizardY < 0) wizardY = 0;
         if (wizardY > grnd.getY() - wiz.getHeight()) wizardY = grnd.getY() - wiz.getHeight();
 
-//        if(action_jump){
-//            if (!jump) {
-//                wizardY += 10;
-//            }
-//            else {
-//                wizardY -= 10;
-//                if (wizardY < jumpLimit) {
-//                    jump = false;
-//                }
-//            }
-////            if(wizardY < jumpLimit && jump){
-////                wizardY -= 10;
-////            }else {
-////                jump = false;
-////                wizardY +=10;
-////            }
-////            wizard.setImageDrawable(wizardRightRun);
-//
-//        }
-//
-//        if (wizardX < 0) wizardX = 0;
-//        if (wizardX > frame.getWidth() - wiz.getWidth()) wizardX = frame.getWidth() - wiz.getWidth();
-//
-//        if (wizardX >= 0 && wizardX <= plat2.getX() - wiz.getWidth()) {
-////            if (wizardY < plat1.getY()) {
-////                action_jump = true;
-////            }
-//             if (wizardY >= plat1.getY() - wiz.getHeight()) {
-//                action_jump = false;
-//                wizardY = plat1.getY() - wiz.getHeight();
-//            }
-//        }
-//        else if (wizardX >= plat2.getX() && wizardX <= frame.getWidth() - wiz.getWidth()) {
-////            if (wizardY < plat2.getY()) {
-////                action_jump = true;
-////            }
-//             if (wizardY >= plat2.getY() - wiz.getHeight()) {
-//                action_jump = false;
-//                wizardY = plat2.getY() - wiz.getHeight();
-//            }
-//        }
-//        else if (wizardY >= plat2.getY() - wiz.getHeight()) {
-//            action_jump = true;
-//            jumpLimit = wiz.getY();
-//            Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
-//        }
-//        else if (wizardX > plat2.getX() - wiz.getWidth() && wizardY > plat2.getY() - wiz.getHeight()) {
-//            wizardX = plat2.getX() - wiz.getWidth();
-//        }
-
-//        if (wizardX < 0) wizardX = 0;
-//        if (wizardX < plat2.getX() && wizardY < plat2.getY()){
-//            wizardY = plat1.getY() - wiz.getHeight();
-//            action_jump = false;
-//        }
-//        if (wizardX > frame.getWidth() - wiz.getWidth()) wizardX = frame.getWidth() - wiz.getWidth();
-//
-//        if (wizardX > plat2.getX() - wiz.getWidth() && wizardY > plat2.getY() - wiz.getHeight()) {
-//            wizardX = plat2.getX() - wiz.getWidth();
-//        }
-//
-//        if (wizardY > plat1.getY() - wiz.getHeight()){
-//            wizardY = plat1.getY() - wiz.getHeight();
-//            action_jump = false;
-//        }
-//
-//        if (wizardX > plat2.getX() && wizardY < plat2.getY() - wiz.getHeight()) {
-//            wizardY = plat2.getY() - wiz.getHeight();
-//            action_jump = false;
-//        }
-//
-//
-//
-//        if (wizardY < plat2.getY() - wiz.getHeight() && wizardX > plat2.getX() - wiz.getWidth()) {
-//            wizardY = plat2.getY() - wiz.getHeight();
-//            action_jump = false;
-//        }
-//
-//        if (wizardY > plat1.getY() - wiz.getHeight()) {
-//            wizardY = plat1.getY() - wiz.getHeight();
-//            action_jump = false;
-//        }
-
-//        else if (wizardY < plat2.getY() - wiz.getHeight() && wizardX > plat2.getX() + plat2.getWidth() - wiz.getX()) {
-//            wizardX = plat2.getX() + plat2.getWidth() - wiz.getX();
-//        }
-//        if (wizardY > plat1.getY() - wiz.getHeight() ) {
-//            wizardY = plat1.getY() - wiz.getHeight();
-//            action_jump = false;
-//        }
-
-//        if (wizardY > frame.getY()+frame.getHeight()-plat1.getHeight()) wizardY = frame.getY()+frame.getHeight()-plat1.getHeight();
 
         wiz.setX(wizardX);
         wiz.setY(wizardY);
@@ -231,7 +163,6 @@ public class LevelOne extends AppCompatActivity implements View.OnTouchListener 
             action_right = false;
             action_up = false;
             action_down = false;
-//            action_jump = false;
         }
 
         return true;

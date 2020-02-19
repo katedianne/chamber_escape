@@ -11,8 +11,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".Escaped"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".GameOver"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppPopup" />
+        <activity
+            android:name=".MiniGame"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppPopup" />
+        <activity
             android:name=".Selection916"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LevelSixteen"
             android:screenOrientation="landscape" />
@@ -24,10 +35,10 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".LevelThirteen"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LevelTwelve"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LevelEleven"
             android:screenOrientation="landscape" />
@@ -36,31 +47,31 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".LevelNine"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LevelEight"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LevelSeven"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LevelThree"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LevelTwo"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LevelOne"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LevelSix"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LevelFive"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LevelFour"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".Selection18"
             android:screenOrientation="landscape" />

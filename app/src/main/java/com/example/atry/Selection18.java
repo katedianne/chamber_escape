@@ -8,9 +8,11 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import com.example.atry.Application;
 
 public class Selection18 extends AppCompatActivity {
 
+    Application application = com.example.atry.Application.getOurIntance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,36 +48,45 @@ public class Selection18 extends AppCompatActivity {
             levelButton[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    application.setRevived(false);
                     switch(v.getId()) {
                         case R.id.level1 :
+                            application.setLevel(1);
                             Intent intent = new Intent(Selection18.this, LevelOne.class);
                             startActivity(intent);
                             break;
                         case R.id.level2 :
+                            application.setLevel(2);
                             intent = new Intent(Selection18.this, LevelTwo.class);
                             startActivity(intent);
                             break;
                         case R.id.level3 :
+                            application.setLevel(3);
                             intent = new Intent(Selection18.this, LevelThree.class);
                             startActivity(intent);
                             break;
                         case R.id.level4 :
+                            application.setLevel(4);
                             intent = new Intent(Selection18.this, LevelFour.class);
                             startActivity(intent);
                             break;
                         case R.id.level5 :
+                            application.setLevel(5);
                             intent = new Intent(Selection18.this, LevelFive.class);
                             startActivity(intent);
                             break;
                         case R.id.level6 :
+                            application.setLevel(6);
                             intent = new Intent(Selection18.this, LevelSix.class);
                             startActivity(intent);
                             break;
                         case R.id.level7 :
+                            application.setLevel(7);
                             intent = new Intent(Selection18.this, LevelSeven.class);
                             startActivity(intent);
                             break;
                         case R.id.level8 :
+                            application.setLevel(8);
                             intent = new Intent(Selection18.this, LevelEight.class);
                             startActivity(intent);
                             break;
